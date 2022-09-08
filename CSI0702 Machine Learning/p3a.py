@@ -3,11 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 import csv
-# columns=['Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume', 'Company']
-columns=['a', 'income', 'happiness']
-x = pd.read_csv("CSI0702 Machine Learning\\income_data.csv", usecols=columns)
-a=x.income
-b=x.happiness
+x = pd.read_csv("CSI0702 Machine Learning\\Real_Estate_Prices.csv")
+a=x['X2 house age']
+b=x['Y house price of unit area']
 print(a)
 print(b)
 plt.title("Income vs Hapiness Data")
@@ -16,7 +14,7 @@ plt.scatter(a,b)
 
 m=0
 c=0
-l=0.001
+l=0.0001
 epoch=1000
 n=float(len(a))
 for i in range(epoch):
