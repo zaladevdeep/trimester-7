@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>RANDOM NUMBER GUESSING GAME</title>
+</head>
+
+<body>
+
+    <h2>
+
+      <script type="text/javascript">
+
+        let randnum = Math.floor(Math.random() * 10) + 1;
+        let num,i;
+        let counter = 1;
+
+        for (i = 0; i < 5; i++) {
+
+          if (counter == 1) {
+            num = parseInt(prompt("GUESS A NUMBER BETWEEN 1 TO 10 : "));
+          }
+          else {
+            num = parseInt(prompt("( TRY NUMBER -" + counter + " ) GUESS A NUMBER BETWEEN 1 TO 200 : "));
+          }
+
+          if (num == randnum) {
+            document.write("<br>");
+            document.body.style.backgroundColor = 'yellow'
+            document.write("CONGRATULATION..! You Guessed The Correct Number.");
+            exit
+          }
+          else {
+            counter = counter + 1;
+            continue
+          }
+        }
+
+        document.body.style.backgroundColor = 'orange'
+        document.write("CORRECT NUMBER WAS : " + randnum + "<br><br><br>");
+        document.write("BETTER LUCK NEXT TIME...!💯");
+
+      </script>
+
+  </h2>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>PRACTICAL-9(A)</title>
+</head>
+
+<body>
+
+    <h2>
+      <script language=javascript, type="text/javascript">
+
+        let name = [];
+        let i = 0;
+
+        while (1) {
+          name[i] = prompt("Enter NAME-" + (i + 1) + " : ");
+          if (name[i] == "END" || name[i] == "end") {
+            break
+          }
+          i++;
+        }
+
+        name.pop()
+        name.sort()
+
+        document.write("NAMES SORTED IN ALPHABETICAL ORDER :- ");
+        document.write("<br>");
+        for (j = 0; j < i; j++) {
+          document.write("<br>");
+          document.write((1 + j) + ") " + name[j]);
+        }
+
+      </script>
+
+  </h2>
+</body>
+
+</html>

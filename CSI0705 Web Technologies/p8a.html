@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>DENOMINATION OF DEPOSITED AMOUNT</title>
+</head>
+
+<body>
+
+    <h3>
+      <script>
+        let amt = parseInt(prompt("Enter The Total Amount (In Rupees) : "));
+        let temp = amt;
+
+        let m100 = Math.floor(amt / 100);
+        amt = amt - m100 * 100;
+
+        let m50 = Math.floor(amt / 50);
+        amt = amt - m50 * 50;
+
+        let m20 = Math.floor(amt / 20);
+        amt = amt - m20 * 20;
+
+        let m10 = Math.floor(amt / 10);
+        amt = amt - m10 * 10;
+
+        let m5 = Math.floor(amt / 5);
+        amt = amt - m5 * 5;
+
+        let m2 = Math.floor(amt / 2);
+        amt = amt - m2 * 2;
+
+        let m1 = Math.floor(amt / 1);
+
+        document.write("TOTAL AMOUNT ENTERED : ₹ " + temp);
+        document.write("<br><br>");
+        document.write("<br><br>");
+        document.write("Number Of ₹100 Notes - " + m100);
+        document.write("<br><br>");
+        document.write("Number Of ₹50 Notes - " + m50);
+        document.write("<br><br>");
+        document.write("Number Of ₹20 Notes - " + m20);
+        document.write("<br><br>");
+        document.write("Number Of ₹10 Notes - " + m10);
+        document.write("<br><br>");
+        document.write("Number Of ₹5 Notes - " + m5);
+        document.write("<br><br>");
+        document.write("Number Of ₹2 Coins - " + m2);
+        document.write("<br><br>");
+        document.write("Number Of ₹1 Coins - " + m1);
+      </script>
+
+    </h3>
+
+</body>
+
+</html>
