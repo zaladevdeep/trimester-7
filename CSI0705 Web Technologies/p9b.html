@@ -2,10 +2,7 @@
 <html>
 
 <head>
-  <title>PRACTICAL-9(B)</title>
 </head>
-
-<link rel="stylesheet" href="p9b.css">
 
 <script>
   function display() {
@@ -14,11 +11,11 @@
     let time = date.getHours();
 
     if (time < 12) {
-      document.write("<< GOOD MORNING >>");
+      document.write("GOOD MORNING");
     } else if (time >= 12 && time < 18) {
-      document.write("<< GOOD AFTERNOON >>");
+      document.write("GOOD AFTERNOON");
     } else {
-      document.write("<< GOOD EVENING >>");
+      document.write("GOOD EVENING");
     }
 
     document.write("<br><br>");
@@ -27,16 +24,11 @@
 </script>
 
 <body>
-  <h2>Name : Rohin Jain</h2>
-  <h2>Roll Number : 20BCM069</h2><br>
-
-  <CENTER>
-    <h1>PRACTICAL - 9 (B)</h1><br>
-    <h2 style="color:red;">JavaScript Program To Display Current Date & Time.</h2>
+    <h1 style="color:red;">Display Current Date & Time.</h1>
 
     <br><br>
 
-    <h2>
+    <h4>
 
       <script> display() </script>
 
@@ -44,8 +36,7 @@
 
       <button type="button" onclick="document.getElementById('dnt').innerHTML = Date()"> DISPLAY DATE & TIME</button>
 
-    </CENTER>
-    </h2>
+    </h4>
 </body>
 
 </html>

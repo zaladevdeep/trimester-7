@@ -3,6 +3,46 @@
 
 <head>
     <script>
+        function nospecialsym(input){
+            if(/^[a-zA-Z0-9]*$/.test(str) == false){
+                return true;
+            }
+            else{
+                alert("Special Symbol Found!!");
+                return false;
+            }
+        }
+        function phonenumber(inputtxt) {
+            var phoneno = /^\d{10}$/;
+            if (inputtxt.value.match(phoneno)) {
+                return true;
+            }
+            else {
+                alert("Not a valid Phone Number");
+                return false;
+            }
+        }
+        function ValidateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat)) {
+                document.form1.text1.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                document.form1.text1.focus();
+                return false;
+            }
+        }
+        function ValidateIPaddress(ipaddress) {
+            if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(myForm.emailAddr.value)) {
+                return (true)
+            }
+            else {
+                alert("You have entered an invalid IP address!")
+                return (false)
+            }
+        }
         function lettersNumbersCheck(name) {
             var regEx = /^[0-9a-zA-Z]+$/;
             if (name.value.match(regEx)) {
@@ -12,7 +52,16 @@
                 alert("Please enter letters and numbers only.");
                 return false;
             }
-        }    
+        }
+        function passcheck(p1, p2) {
+            if (p1.value == p2.value) {
+                return true;
+            }
+            else {
+                alert("Passwords do not match.");
+                return false;
+            }
+        }
     </script>
 </head>
 
@@ -21,8 +70,13 @@
         <h2>JavaScript Letters Numbers Validation</h2>
         <form name="form1" action="#">
             Name: <input type='text' name='name' /></br></br>
-            <input type="submit" name="submit" value="Submit" onclick="lettersNumbersCheck(document.form1.name)" />
+            Password: <input type="text" name="password" placeholder="Enter Password" required></br></br>
+            Retype Password: <input type="text" name="password1" placeholder="Enter Password" required></br></br>
+            IP Address: <input type="text" name="ipaddress" placeholder="Enter IP"></br></br>
+            <input type="submit" name="submit" value="Submit"
+                onclick="lettersNumbersCheck(document.form1.name);passcheck(document.form1.password,document.form1.password1);ValidateIPaddress(document.form1.ipaddress);" />
         </form>
     </div>
 </body>
+
 </html>
