@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Grading System</title>
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3%;
+        }
+
+        .mid {
+            text-align: center;
+        }
+
+        #btn {
+            padding-left: 45%;
+            padding-right: 40%;
+            margin-top: 15px;
+        }
+
+        div {
+            float: left;
+        }
+
+        .second {
+            margin-left: 10%;
+            justify-content: center;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Student Grading System</h1>
+    <div id="first">
+        <table>
+            <th>
+                Criterion
+            </th>
+            <th>
+                Marks (/100)
+            </th>
+            <tr>
+                <td>Class test (12%)</td>
+                <td><input type=number step=any id="class_test" class="mid" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>Tutorial (12%)</td>
+                <td><input type=number step=any id="tutorial" class="mid" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>SE (16%)</td>
+                <td><input type=number step=any id="se" class="mid" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>LPW (20%)</td>
+                <td><input type=number step=any id="lpw" class="mid" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td>SEE (40%)</td>
+                <td><input type=number step=any id="see" class="mid" min="0" max="100"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit" id="btn">
+    </div>
+    <div class="second">
+        <label>Marks</label>
+        <input type="text" id="total_marks">
+        <label>Grade</label>
+        <input type="text" id="grade">
+        <label>BG-Color</label>
+        <input type="text" id="color">
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            console.log('Button clicked')
+            let class_test = (12 / 100) *
+                (document.getElementById('class_test').value);
+            let tutorial = (12 / 100) *
+                (document.getElementById('tutorial').value);
+            let se = (16 / 100) * (document.getElementById('se').value);
+            let lpw = (20 / 100) * (document.getElementById('lpw').value);
+            let see = (40 / 100) * (document.getElementById('see').value);
+            let total_marks = class_test + tutorial + se + lpw + see;
+            document.getElementById('total_marks').value = total_marks;
+            if (total_marks > 90) {
+                document.body.style.backgroundColor = 'green';
+                document.getElementById('color').value = 'Green';
+                document.getElementById('grade').value = 'A+';
+            }
+            else if (total_marks > 80) {
+                document.body.style.backgroundColor = `rgb(97, 179, 59)`;
+                document.getElementById('color').value = 'Parrot green';
+                document.getElementById('grade').value = 'A';
+            }
+            else if (total_marks > 70) {
+                document.body.style.backgroundColor = 'yellow';
+                document.getElementById('color').value = 'Yellow';
+                document.getElementById('grade').value = 'B+';
+            }
+            else if (total_marks > 60) {
+                document.body.style.backgroundColor = 'pink';
+                document.getElementById('color').value = 'Pink';
+                document.getElementById('grade').value = 'B';
+            }
+            else if (total_marks > 50) {
+                document.body.style.backgroundColor = 'orange';
+                document.getElementById('color').value = 'Orange';
+                document.getElementById('grade').value = 'C+';
+            }
+            else if (total_marks > 40) {
+                document.body.style.backgroundColor = 'red';
+                document.getElementById('color').value = 'Red';
+                document.getElementById('grade').value = 'C';
+            }
+            else {
+                document.body.style.backgroundColor = 'grey';
+                document.getElementById('color').value = 'grey';
+                document.getElementById('grade').value = 'Fail';
+            }
+        })
+    </script>
+</body>
+
+</html>

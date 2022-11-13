@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Guessing Game</title>
+</head>
+
+<body>
+    <h1>Mystery Number Guessing</h1>
+    <div id="form">
+        <label for="guess">Enter your guess (1 - 10)</label>
+        <input type="number" name="guess" id="guess" required>
+        <input type="submit" value="Check" id="guessbtn">
+    </div>
+    <script>
+        let num = Math.floor(Math.random() * 10);
+        console.log("Myster number is: " + num);
+        let tries = 0
+        let limit = 5
+        document.getElementById("guessbtn").addEventListener("click",
+            function () {
+                let guess = document.getElementById("guess").value;
+                if (guess == num) {
+                    document.body.style.backgroundColor = 'yellow';
+                    alert('You guessed it correct!');
+                }
+                else if (guess < num) {
+                    document.body.style.backgroundColor = 'red';
+                    alert('Too low');
+                }
+                else {
+                    document.body.style.backgroundColor = 'green';
+                    alert('Too high');
+                }
+                tries++;
+                if (tries == limit) {
+                    alert('You lose :(\nThe number was ' + num);
+                }
+            })
+    </script>
+</body>
+
+</html>
