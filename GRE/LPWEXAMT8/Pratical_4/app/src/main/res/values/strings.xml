@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pratical_4</string>
+    <string name="add">ADD</string>
+    <string name="rem">REMOVE</string>
+    <string name="name">Name</string>
+    <string name="select_country">Select Country</string>
+</resources>
